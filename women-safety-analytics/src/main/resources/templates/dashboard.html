@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | HerAnalytics</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<header class="navbar">
+    <div class="logo">HerAnalytics</div>
+
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a href="#statistics">Statistics</a>
+        <a href="#charts">Analytics</a>
+        <a href="#reports">Reports</a>
+    </nav>
+</header>
+
+<main class="dashboard">
+
+    <div class="dashboard-heading">
+        <div>
+            <p class="section-label">ANALYTICS OVERVIEW</p>
+            <h1>Women's Safety Dashboard</h1>
+            <p>Explore reported statistics and crime trends.</p>
+        </div>
+    </div>
+
+    <div class="demo-notice">
+        Demo dashboard: displayed figures are illustrative,
+        not official statistics.
+    </div>
+
+    <section class="filter-section">
+        <div>
+            <label for="stateFilter">Select State</label>
+            <select id="stateFilter">
+                <option value="All">All States</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Rajasthan">Rajasthan</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="yearFilter">Select Year</label>
+            <select id="yearFilter">
+                <option value="All">All Years</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="categoryFilter">Crime Category</label>
+            <select id="categoryFilter">
+                <option value="All">All Categories</option>
+                <option value="Harassment">Harassment</option>
+                <option value="Assault">Assault</option>
+                <option value="Domestic Violence">Domestic Violence</option>
+            </select>
+        </div>
+    </section>
+
+    <section class="stats-grid" id="statistics">
+
+        <div class="stat-card">
+            <p>Reported Cases</p>
+            <h2 id="totalCases">12,450</h2>
+            <span>Illustrative demo value</span>
+        </div>
+
+        <div class="stat-card">
+            <p>States Covered</p>
+            <h2>3</h2>
+            <span>Demo dataset</span>
+        </div>
+
+        <div class="stat-card">
+            <p>Years Covered</p>
+            <h2>3</h2>
+            <span>2022–2024</span>
+        </div>
+
+    </section>
+
+    <section class="charts-section" id="charts">
+
+        <div class="chart-card">
+            <h3>Year-wise Crime Trends</h3>
+            <canvas id="trendChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h3>Category-wise Comparison</h3>
+            <canvas id="categoryChart"></canvas>
+        </div>
+
+    </section>
+
+    <section class="reports-section" id="reports">
+        <h2>Reports and Analysis</h2>
+        <p>
+            Explore regional and year-wise statistical reports.
+            Report downloads will be connected after backend integration.
+        </p>
+        <button type="button" class="primary-button" disabled>
+            Download Report (Coming Soon)
+        </button>
+    </section>
+
+</main>
+
+<footer>
+    <h3>HerAnalytics</h3>
+    <p>Women's Safety Analytics and Crime Trend Visualization System</p>
+</footer>
+
+<script th:src="@{/js/dashboard.js}"></script>
+
+</body>
+</html>
