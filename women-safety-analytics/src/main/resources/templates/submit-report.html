@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Report an Incident | HerAnalytics</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="logo">HerAnalytics</div>
+
+        <nav>
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/dashboard}">Dashboard</a>
+            <a th:href="@{/reports}">Analytics Reports</a>
+            <a th:href="@{/submit-report}">Report an Incident</a>
+        </nav>
+    </header>
+
+    <main class="report-page">
+
+        <!-- Page Heading -->
+        <section class="report-heading">
+            <p class="section-label">YOUR VOICE MATTERS</p>
+
+            <h1>Report a Safety Concern</h1>
+
+            <p>
+                Share a safety concern with us.
+                Your report can help support awareness
+                and appropriate review.
+            </p>
+        </section>
+
+        <!-- Emergency Notice -->
+        <div class="report-warning">
+            <strong>Important:</strong>
+            If you are in immediate danger, contact
+            emergency services at 112 in India.
+            This website is not an emergency response service.
+        </div>
+
+        <!-- Reporting Form -->
+        <section class="report-form-container">
+
+            <h2>Incident Information</h2>
+
+            <p class="form-description">
+                Please provide the details you are comfortable sharing.
+            </p>
+
+            <form id="incidentForm">
+
+                <div class="form-group">
+                    <label for="category">Incident Category *</label>
+
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="Harassment">Harassment</option>
+                        <option value="Assault">Assault</option>
+                        <option value="Stalking">Stalking</option>
+                        <option value="Domestic Violence">Domestic Violence</option>
+                        <option value="Cyber Harassment">Cyber Harassment</option>
+                        <option value="Other">Other Safety Concern</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="incidentDate">Date of Incident</label>
+
+                    <input
+                        type="date"
+                        id="incidentDate"
+                        name="incidentDate">
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="state">State *</label>
+
+                        <input
+                            type="text"
+                            id="state"
+                            name="state"
+                            placeholder="Enter state"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City / District *</label>
+
+                        <input
+                            type="text"
+                            id="city"
+                            name="city"
+                            placeholder="Enter city or district"
+                            required>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="description">
+                        Describe the Incident *
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="6"
+                        placeholder="Describe what happened..."
+                        required></textarea>
+                </div>
+
+                <hr>
+
+                <h2>Reporter Information</h2>
+
+                <p class="form-description">
+                    Contact details are optional. Do not include
+                    unnecessary personal or identifying information.
+                </p>
+
+                <div class="form-group">
+                    <label for="reporterName">Name (Optional)</label>
+
+                    <input
+                        type="text"
+                        id="reporterName"
+                        name="reporterName"
+                        placeholder="Enter your name">
+                </div>
+
+                <div class="form-group">
+                    <label for="contact">Email or Phone (Optional)</label>
+
+                    <input
+                        type="text"
+                        id="contact"
+                        name="contact"
+                        placeholder="Enter contact information">
+                </div>
+
+                <div class="anonymous-option">
+                    <input
+                        type="checkbox"
+                        id="anonymous"
+                        name="anonymous">
+
+                    <label for="anonymous">
+                        I want to submit this report anonymously.
+                    </label>
+                </div>
+
+                <p class="privacy-note">
+                    Please note: this is currently a frontend preview.
+                    Your information will not be submitted or stored.
+                </p>
+
+                <button type="button" class="primary-button" disabled>
+                    Submit Report (Coming Soon)
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>HerAnalytics</h3>
+        <p>
+            Women's Safety Analytics and Crime Trend
+            Visualization System
+        </p>
+    </footer>
+
+</body>
+</html>

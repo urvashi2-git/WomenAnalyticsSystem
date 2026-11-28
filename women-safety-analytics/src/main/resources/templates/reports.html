@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports | HerAnalytics</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">HerAnalytics</div>
+
+        <nav>
+            <a th:href="@{/}">Home</a>
+            <a th:href="@{/dashboard}">Dashboard</a>
+            <a href="#reports">Reports</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="dashboard-heading">
+            <div>
+                <p class="section-label">DATA INSIGHTS</p>
+                <h1>Reports and Analysis</h1>
+                <p>
+                    Explore women's safety statistics and
+                    understand crime trends across regions.
+                </p>
+            </div>
+        </section>
+
+        <div class="demo-notice">
+            Demo reports: all displayed figures are illustrative,
+            not official statistics.
+        </div>
+
+        <section class="stats-grid" id="reports">
+
+            <div class="stat-card">
+                <p>Regional Analysis</p>
+                <h2>03</h2>
+                <span>Demo states covered</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Yearly Analysis</p>
+                <h2>2022–2024</h2>
+                <span>Illustrative period</span>
+            </div>
+
+            <div class="stat-card">
+                <p>Crime Categories</p>
+                <h2>03</h2>
+                <span>Demo categories</span>
+            </div>
+
+        </section>
+
+        <section class="reports-section">
+
+            <h2>Available Reports</h2>
+
+            <p>
+                Select a report to explore the corresponding
+                analytical information.
+            </p>
+
+            <div class="report-card">
+                <h3>Year-wise Crime Report</h3>
+                <p>
+                    Understand changes in reported cases
+                    across different years.
+                </p>
+                <a th:href="@{/dashboard}"
+                   class="primary-button">
+                    View Dashboard
+                </a>
+            </div>
+
+            <div class="report-card">
+                <h3>State-wise Crime Report</h3>
+                <p>
+                    Explore regional differences in the
+                    illustrative dataset.
+                </p>
+                <a th:href="@{/dashboard}"
+                   class="primary-button">
+                    View Dashboard
+                </a>
+            </div>
+
+            <div class="report-card">
+                <h3>Category-wise Crime Report</h3>
+                <p>
+                    Compare different categories of
+                    reported crimes.
+                </p>
+                <a th:href="@{/dashboard}"
+                   class="primary-button">
+                    View Dashboard
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <h3>HerAnalytics</h3>
+        <p>
+            Women's Safety Analytics and Crime Trend
+            Visualization System
+        </p>
+    </footer>
+
+</body>
+</html>

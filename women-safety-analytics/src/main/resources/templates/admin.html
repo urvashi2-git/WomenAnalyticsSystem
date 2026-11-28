@@ -1,0 +1,208 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | HerAnalytics</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="admin-body">
+
+<header class="admin-navbar">
+    <div class="admin-logo">HerAnalytics</div>
+    <nav>
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/dashboard}">Analytics</a>
+        <a th:href="@{/reports}">Reports</a>
+        <a th:href="@{/submit-report}">Public Portal</a>
+    </nav>
+    <span class="admin-profile">Demo Administrator</span>
+</header>
+
+<main class="admin-container">
+
+    <section class="admin-heading">
+        <div>
+            <p class="admin-label">SYSTEM MANAGEMENT</p>
+            <h1>Admin Dashboard</h1>
+            <p>Monitor reports, departments and platform activity.</p>
+        </div>
+        <span class="admin-demo-tag">DEMO MODE</span>
+    </section>
+
+    <div class="admin-notice">
+        This is a demonstration dashboard. All displayed records are fictional.
+    </div>
+
+    <!-- Overview cards -->
+    <section class="admin-stats">
+
+        <div class="admin-stat-card">
+            <p>Total Reports</p>
+            <h2>125</h2>
+            <span>All submitted reports</span>
+        </div>
+
+        <div class="admin-stat-card">
+            <p>Pending Reports</p>
+            <h2>38</h2>
+            <span>Awaiting review</span>
+        </div>
+
+        <div class="admin-stat-card">
+            <p>Under Review</p>
+            <h2>52</h2>
+            <span>Currently being reviewed</span>
+        </div>
+
+        <div class="admin-stat-card">
+            <p>Resolved Reports</p>
+            <h2>35</h2>
+            <span>Marked as resolved</span>
+        </div>
+
+    </section>
+
+    <!-- Reports table -->
+    <section class="admin-section">
+
+        <div class="admin-section-heading">
+            <div>
+                <h2>Recent Reports</h2>
+                <p>Monitor and manage submitted safety reports.</p>
+            </div>
+            <a th:href="@{/reports}" class="admin-link">View Reports</a>
+        </div>
+
+        <div class="admin-table-wrapper">
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>Tracking ID</th>
+                        <th>Category</th>
+                        <th>Location</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>HA-1001</td>
+                        <td>Harassment</td>
+                        <td>Bhopal</td>
+                        <td>20 Nov 2026</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td><button class="admin-action" disabled>Review</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>HA-1002</td>
+                        <td>Cyber Harassment</td>
+                        <td>Jabalpur</td>
+                        <td>19 Nov 2026</td>
+                        <td><span class="status reviewing">Under Review</span></td>
+                        <td><button class="admin-action" disabled>Review</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>HA-1003</td>
+                        <td>Stalking</td>
+                        <td>Indore</td>
+                        <td>18 Nov 2026</td>
+                        <td><span class="status resolved">Resolved</span></td>
+                        <td><button class="admin-action" disabled>View</button></td>
+                    </tr>
+
+                    <tr>
+                        <td>HA-1004</td>
+                        <td>Assault</td>
+                        <td>Bhopal</td>
+                        <td>17 Nov 2026</td>
+                        <td><span class="status pending">Pending</span></td>
+                        <td><button class="admin-action" disabled>Review</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+
+    <!-- Department management -->
+    <section class="admin-section">
+
+        <div class="admin-section-heading">
+            <div>
+                <h2>Department Management</h2>
+                <p>Overview of simulated departments in the demo.</p>
+            </div>
+            <button class="admin-primary-button" disabled>
+                Add Department
+            </button>
+        </div>
+
+        <div class="department-grid">
+
+            <div class="department-card">
+                <h3>Women's Safety Cell</h3>
+                <p>Demo department account</p>
+                <span class="department-active">Active</span>
+            </div>
+
+            <div class="department-card">
+                <h3>Cyber Safety Department</h3>
+                <p>Demo department account</p>
+                <span class="department-active">Active</span>
+            </div>
+
+            <div class="department-card">
+                <h3>Regional Support Unit</h3>
+                <p>Demo department account</p>
+                <span class="department-active">Active</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Platform management -->
+    <section class="admin-section">
+        <h2>Platform Management</h2>
+        <p class="admin-description">
+            Administrative controls for the HerAnalytics demonstration.
+        </p>
+
+        <div class="management-grid">
+            <div class="management-card">
+                <h3>User Management</h3>
+                <p>Manage public users and demo department accounts.</p>
+                <button disabled>Manage Users</button>
+            </div>
+
+            <div class="management-card">
+                <h3>Report Assignment</h3>
+                <p>Assign submitted reports to demo departments.</p>
+                <button disabled>Assign Reports</button>
+            </div>
+
+            <div class="management-card">
+                <h3>Activity Monitoring</h3>
+                <p>Monitor report updates and administrative actions.</p>
+                <button disabled>View Activity</button>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="admin-footer">
+    <h3>HerAnalytics</h3>
+    <p>Women's Safety Analytics and Crime Trend Visualization System</p>
+    <small>College Demonstration Prototype</small>
+</footer>
+
+</body>
+</html>

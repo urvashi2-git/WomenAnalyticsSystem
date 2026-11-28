@@ -69,7 +69,7 @@
 
     <title>HerAnalytics | Women's Safety Analytics</title>
 
-    <link rel="stylesheet" href="/women-safety-analytics/src/main/resources/static/css/style.css">
+   <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 
 <body>
@@ -102,7 +102,7 @@
             data visualizations.
         </p>
 
-        <a th:href="@{/dashboard}" class="primary-button">
+        <a href="/dashboard" class="primary-button">
             Explore Dashboard →
         </a>
     </div>

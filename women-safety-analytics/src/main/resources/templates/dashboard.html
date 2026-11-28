@@ -7,7 +7,7 @@
 
     <title>Dashboard | HerAnalytics</title>
 
-    <link rel="stylesheet" th:href="@{/css/style.css}">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -17,12 +17,15 @@
 <header class="navbar">
     <div class="logo">HerAnalytics</div>
 
-    <nav>
-        <a th:href="@{/}">Home</a>
-        <a href="#statistics">Statistics</a>
-        <a href="#charts">Analytics</a>
-        <a href="#reports">Reports</a>
-    </nav>
+
+<nav>
+    <a th:href="@{/}">Home</a>
+    <a href="#statistics">Statistics</a>
+    <a href="#charts">Analytics</a>
+    <a th:href="@{/reports}">Reports</a>
+    <a th:href="@{/submit-report}">Report an Incident</a>
+    <a th:href="@{/admin}">Admin</a>
+</nav>
 </header>
 
 <main class="dashboard">
@@ -114,9 +117,12 @@
             Explore regional and year-wise statistical reports.
             Report downloads will be connected after backend integration.
         </p>
-        <button type="button" class="primary-button" disabled>
-            Download Report (Coming Soon)
-        </button>
+        <a th:href="@{/reports}" class="primary-button">
+            Explore Reports
+        </a>
+        <a th:href="@{/submit-report}" class="primary-button">
+       Report a Safety Concern
+   </a>
     </section>
 
 </main>
